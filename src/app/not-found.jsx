@@ -16,7 +16,8 @@ export default function NotFound() {
           <span className="text-4xl">🔍</span>
         </div>
 
-        {/* ৩. ৪০৪ কোড ও হেডিং */}
+
+
         <div className="mb-2">
           <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#059669] bg-emerald-100/60 px-3 py-1 rounded-full">
             ত্রুটি ৪০৪ • পৃষ্ঠা পাওয়া যায়নি
