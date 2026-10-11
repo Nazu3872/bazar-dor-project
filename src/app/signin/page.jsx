@@ -1,0 +1,40 @@
+import Link from "next/link";
+import SigninForm from "./signin-form";
+
+export const metadata = {
+  title: "সাইন ইন | বাজার দর",
+  description: "বাজার দর-এ আপনার অ্যাকাউন্টে সাইন ইন করুন।",
+};
+
+export default function SigninPage() {
+  return (
+    <main className="flex flex-col items-center justify-center px-4 py-10 sm:py-14">
+      <div className="w-full max-w-md">
+        {/* হেডার টেক্সট */}
+        <div className="mb-6 text-center">
+          <h1 className="text-2xl font-black tracking-tight text-gray-900 sm:text-3xl">
+            সাইন ইন
+          </h1>
+          <p className="mt-1.5 text-xs sm:text-sm text-gray-500 font-medium">
+            আপনার অ্যাকাউন্টে প্রবেশ করতে ইমেইল ও পাসওয়ার্ড দিন।
+          </p>
+        </div>
+
+        {/* সাইন ইন ফর্ম ও সোশ্যাল বাটন */}
+        <SigninForm />
+
+        {/* হোম পেজে ফিরে যাওয়ার লিঙ্ক */}
+        <div className="mt-6 text-center">
+          <Link
+            href="/"
+            className="text-xs sm:text-sm text-gray-500 hover:text-gray-700 transition-colors font-medium"
+          >
+            ← হোম পেজে ফিরে যান
+          </Link>
+        </div>
+      </div>
+    </main>
+  );
+}
+
+

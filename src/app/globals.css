@@ -1,0 +1,30 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ========================================================
+   মারকুই অ্যানিমেশন (Marquee Continuous Scrolling Effect)
+   সহজ সিএসএস দিয়ে স্মুথভাবে স্ক্রোল করানোর জন্য
+======================================================== */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+
+/* মাউস হোভার করলে স্ক্রোল সাময়িকভাবে থেমে থাকবে যেন সহজে পড়া যায় */
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
