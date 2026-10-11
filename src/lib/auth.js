@@ -12,8 +12,11 @@ try {
 }
 
 let client;
-const mongoUri =
-  process.env.MONGODB_URI || process.env.MONGODB_URI;
+const mongoUri = process.env.BETTER_AUTH_MONGO_URI || process.env.MONGODB_URI;
+
+if (!mongoUri) {
+  throw new Error("Missing MongoDB connection string. Set BETTER_AUTH_MONGO_URI or MONGODB_URI in your environment.");
+}
 
 if (process.env.NODE_ENV === "development") {
   if (!global._mongoClient) {
@@ -26,6 +29,14 @@ if (process.env.NODE_ENV === "development") {
 
 const db = client.db("bazar-dor");
 
+const productionBaseUrl =
+  process.env.BETTER_AUTH_URL ||
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : null);
+
 export const auth = betterAuth({
   onAPIError: {
     onError: (error, ctx) => {
@@ -34,12 +45,8 @@ export const auth = betterAuth({
   },
   secret: process.env.BETTER_AUTH_SECRET,
   baseURL:
-    process.env.BETTER_AUTH_URL ||
-    (process.env.VERCEL_PROJECT_PRODUCTION_URL
-      ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-      : process.env.VERCEL_URL
-      ? `https://${process.env.VERCEL_URL}`
-      : process.env.NODE_ENV === "production"
+    productionBaseUrl ||
+    (process.env.NODE_ENV === "production"
       ? "https://bazar-dor-project-omega.vercel.app"
       : "http://localhost:3000"),
   emailAndPassword: {
