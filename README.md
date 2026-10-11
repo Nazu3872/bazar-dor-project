@@ -1,88 +1,140 @@
-# 🛒 বাজার দর (Bazar Dor) — নিত্যপ্রয়োজনীয় পণ্যের বাজার দর ট্র্যাকার
+# বাজার দর (Bazar Dor)
 
-একটি আধুনিক, দ্রুত ও রেসপনসিভ ওয়েব অ্যাপ্লিকেশন যা ব্যবহারকারীদের নিত্যপ্রয়োজনীয় পণ্যের প্রতিদিনের বাজার দর, দামের ওঠানামা এবং বাজারভিত্তিক তুলনামূলক তথ্য সহজে দেখতে সাহায্য করে।
+একটি Next.js ও Better Auth-ভিত্তিক বাজার দর ট্র্যাকিং অ্যাপ্লিকেশন, যেখানে ব্যবহারকারীরা পণ্যের দামের ওঠানামা, ক্যাটাগরি অনুযায়ী ফিল্টারিং, সাইন-আপ/সাইন-ইন, এবং প্রোফাইল ম্যানেজমেন্ট দেখতে পারে।
 
-🔗 **লাইভ লিংক (Live Demo):** [https://bazar-dor-project-omega.vercel.app](https://bazar-dor-project-omega.vercel.app)
+## Project Overview
 
----
+এই প্রজেক্টটি বাংলাদেশের নিত্যপ্রয়োজনীয় পণ্যের বাজার দর ও তুলনামূলক দাম দেখানোর জন্য তৈরি। এতে:
 
-## 📌 প্রজেক্টের সংক্ষিপ্ত বিবরণ (Project Overview)
-**বাজার দর** হলো সাধারণ ক্রেতাদের সুবিধার জন্য তৈরি একটি ডিজিটাল বাজার মনিটরিং প্ল্যাটফর্ম। প্রতিদিন বাজারে বিভিন্ন নিত্যপণ্যের (চাল, ডাল, তেল, সবজি, মাছ, মাংস ইত্যাদি) দামের পরিবর্তন, কোন বাজারে কেমন দাম এবং সামগ্রিক বাজার পরিস্থিতি এক নজরে দেখার জন্য এই অ্যাপ্লিকেশনটি তৈরি করা হয়েছে।
+- পণ্যের তালিকা দেখানো
+- ক্যাটাগরি অনুযায়ী ফিল্টার করা
+- দাম অনুযায়ী সাজানো
+- নির্দিষ্ট পণ্যের বিস্তারিত তথ্য দেখা
+- লগইন ব্যবহারকারীদের জন্য protected route
+- Better Auth দিয়ে email/password ও social login
+- MongoDB-ভিত্তিক ডাটাবেস
 
----
+## Tech Stack
 
-## 🚀 ব্যবহৃত প্রযুক্তিসমূহ (Technologies Used)
-- **ফ্রন্টএন্ড ও ফ্রেমওয়ার্ক:** [Next.js](https://nextjs.org/) (App Router, Version 16) & [React](https://react.js.org/)
-- **স্টাইলিং ও ডিজাইন:** [Tailwind CSS](https://tailwindcss.com/) ও [DaisyUI](https://daisyui.com/)
-- **অথেনটিকেশন (Authentication):** [Better Auth](https://www.better-auth.com/) (Email/Password, Google & GitHub Social Login)
-- **ডাটাবেজ:** [MongoDB Atlas](https://www.mongodb.com/atlas)
-- **নোটিফিকেশন ও অ্যালার্ট:** [React-Toastify](https://fkhadra.github.io/react-toastify/)
-- **আইকন:** [React Icons](https://react-icons.github.io/react-icons/)
-- **হোস্টিং ও ডিপ্লয়মেন্ট:** Vercel
+- Next.js 16
+- React 19
+- Tailwind CSS 4
+- DaisyUI
+- Better Auth
+- MongoDB
+- React Toastify
+- React Icons
+- ESLint
 
----
+## Features
 
-## ✨ প্রধান বৈশিষ্ট্যসমূহ (Key Features - Minimum 5)
+- Live price ticker
+- Category-wise product browsing
+- Sort by price
+- Product detail page with protected access
+- User sign-up and sign-in
+- Google and GitHub login support
+- User profile update page
+- Responsive UI for mobile, tablet, and desktop
 
-### ১. 🔄 লাইভ প্রাইস মারকুই (Live Price Ticker)
-- ব্যানারের নিচে একটি ইনফিনিট স্ক্রোলিং মারকুই স্ট্রিপ রয়েছে যা বিভিন্ন পণ্যের ইমোজি, নাম, আজকের দাম এবং দামের পরিবর্তনের হার (▲ বৃদ্ধি / ▼ হ্রাস / — অপরিবর্তিত) রিয়েল-টাইমে প্রদর্শন করে।
-- মাউস হোভার করলে স্ক্রোলিং সাময়িকভাবে থেমে থাকে যেন সহজে পড়া যায়।
+## Project Structure
 
-### ২. 🏷️ ইন্টারেক্টিভ ক্যাটাগরি ফিল্টারিং ও অ্যাক্টিভ হাইলাইট (Category Navigation)
-- শীর্ষভাগে অনুভূমিক ক্যাটাগরি বার রয়েছে (যেমন: সকল পণ্য, চাল, ডাল, মাছ, মাংস, শাকসবজি ইত্যাদি)।
-- ব্যবহারকারী যে ক্যাটাগরিতে ক্লিক করবেন, সেটি চমৎকার সবুজ রঙে হাইলাইট হয়ে থাকবে এবং সেই ক্যাটাগরির পণ্যগুলো ফিল্টার হয়ে প্রদর্শিত হবে।
-
-### ৩. 📊 দাম অনুযায়ী সর্টিং অপশন (Sort by Price Dropdown)
-- পণ্য তালিকার উপরে একটি "সাজান" (Sort) ড্রপডাউন অপশন রয়েছে:
-  - **ডিফল্ট (Default)**
-  - **দাম: কম থেকে বেশি (Price: Low to High)**
-  - **দাম: বেশি থেকে কম (Price: High to Low)**
-- বাংলা সংখ্যা ও মুদ্রা সঠিকভাবে নিউমেরিক্যাল মানে রূপান্তর করে ইনস্ট্যান্ট ফিল্টারিং সম্পন্ন হয়।
-
-### ৪. 🔒 সুরক্ষিত প্রডাক্ট বিস্তারিত পেজ (Protected Product Details Page)
-- যেকোনো পণ্যের বিস্তারিত কার্ড দেখতে চাইলে ইউজারকে অবশ্যই লগইন থাকতে হবে।
-- অননুমোদিত ইউজার ক্লিক করলে স্বয়ংক্রিয়ভাবে সাইন ইন পেজে রিডাইরেক্ট হবে এবং সফলভাবে সাইন ইন করার পর কাঙ্ক্ষিত প্রডাক্ট পেজেই ফিরিয়ে আনবে।
-- পেজে সর্বনিম্ন দাম, সর্বোচ্চ দাম ও গড় দামের সারাংশ এবং বিভিন্ন বাজারের দামের তুলনামূলক টেবিল প্রদর্শিত হয়।
-
-### ৫. 👤 ইউজার অথেনটিকেশন ও প্রোফাইল আপডেট (Auth & Profile Update Route)
-- Better Auth দিয়ে সহজে সাইন আপ, সাইন ইন ও সাইন আউট করার ব্যবস্থা।
-- গুগল ও গিটহাব দিয়ে ১-ক্লিকে সোশ্যাল লগইন সুবিধা।
-- চ্যালেঞ্জ ৩ অনুযায়ী ডেডিকেটেড `/profile/update` সাবরুট, যার মাধ্যমে ব্যবহারকারী সহজে তার নাম আপডেট করতে পারেন।
-- প্রতিটি পদক্ষেপে ইউজার-ফ্রেন্ডলি `react-toastify` নোটিফিকেশন প্রদান করা হয়।
-
-### ৬. 📱 শতভাগ রেসপনসিভ ডিজাইন (Fully Responsive)
-- মোবাইল, ট্যাবলেট, ল্যাপটপ এবং বড় ডেস্কটপ স্ক্রিনে নিখুঁতভাবে দেখার উপযোগী ফ্লুইড গ্রিড লেআউট।
-
----
-
-## ⚙️ লোকাল মেশিনে রান করার নিয়ম (How to Run Locally)
-
-১. **রিপোজিটরি ক্লোন করুন:**
 ```bash
-git clone https://github.com/your-username/bazar-dor-project.git
-cd bazar-dor-project
+.
+├── src/
+│   ├── app/
+│   │   ├── api/
+│   │   │   └── auth/
+│   │   ├── products/
+│   │   ├── product/
+│   │   ├── profile/
+│   │   ├── signin/
+│   │   ├── signup/
+│   │   ├── globals.css
+│   │   ├── layout.jsx
+│   │   └── page.jsx
+│   ├── components/
+│   └── lib/
+│       ├── auth.js
+│       └── auth-client.js
+├── .env
+├── package.json
+├── next.config.mjs
+├── jsconfig.json
+├── eslint.config.mjs
+├── public/
+└── README.md
 ```
 
-২. **প্রয়োজনীয় প্যাকেজ ইন্সটল করুন:**
+## Local Setup
+
+### 1 Install dependencies
+
 ```bash
 npm install
 ```
 
-৩. **এনভায়রনমেন্ট ভ্যারিয়েবল সেটআপ করুন (`.env` ফাইল তৈরি করুন):**
+### 2 Create environment variables
+
+Create a `.env` file in the project root and add the following values:
+
 ```env
-BETTER_AUTH_SECRET="your_strong_secret_key"
-BETTER_AUTH_URL="http://localhost:3000"
-BETTER_AUTH_MONGO_URI="mongodb+srv://username:password@cluster.mongodb.net/bazar-dor"
+BETTER_AUTH_SECRET=your-very-long-random-secret
+BETTER_AUTH_URL=http://localhost:3000
+BETTER_AUTH_MONGO_URI=mongodb+srv://username:password@cluster.mongodb.net/bazar-dor
+
+# Optional if you want Google login
+GOOGLE_CLIENT_ID=your-google-client-id
+GOOGLE_CLIENT_SECRET=your-google-client-secret
+
+# Optional if you want GitHub login
+GITHUB_CLIENT_ID=your-github-client-id
+GITHUB_CLIENT_SECRET=your-github-client-secret
+
+# Optional app URL used by client
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+
+# Project also supports this legacy key
+MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/bazar-dor
 ```
 
-৪. **ডেভেলপমেন্ট সার্ভার চালু করুন:**
+> Note: `BETTER_AUTH_MONGO_URI` is the preferred key for Better Auth, but this project also accepts `MONGODB_URI` as a fallback.
+
+### 3 Run the app
+
 ```bash
 npm run dev
 ```
 
-ব্রাউজারে [http://localhost:3000](http://localhost:3000) লিংকে ভিজিট করুন।
+Then open:
 
----
+```text
+http://localhost:3000
+```
 
-## 📝 লাইসেন্স (License)
-এই প্রজেক্টটি শিক্ষামূলক উদ্দেশ্যে মুক্তভাবে ব্যবহারের জন্য উন্মুক্ত (MIT License)।
+## Build and Production
+
+```bash
+npm run build
+npm run start
+```
+
+## Scripts
+
+```bash
+npm run dev     # start development server
+npm run build   # production build
+npm run start   # run production server
+npm run lint    # run ESLint
+```
+
+## Notes
+
+- This app uses Better Auth with MongoDB on the server side.
+- The auth route is under `src/app/api/auth/[...all]/route.js`.
+- The root layout includes global UI elements such as Navbar, Marquee, Footer, and Toast container.
+- `.env*` files are ignored by default in this repository configuration.
+
+## License
+
+This project is intended for educational and personal development use.
