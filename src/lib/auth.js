@@ -29,6 +29,9 @@ if (process.env.NODE_ENV === "development") {
 
 const db = client.db("bazar-dor");
 
+
+
+
 const productionBaseUrl =
   process.env.BETTER_AUTH_URL ||
   process.env.NEXT_PUBLIC_APP_URL ||
