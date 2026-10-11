@@ -44,7 +44,7 @@ export default function NotFound() {
             <span>হোম পেজে ফিরে যান</span>
           </Link>
 
-          {/* রিফ্রেশ বা ব্রাউজ বাটন */}
+        
           <Link
             href="/"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium text-sm sm:text-base px-6 py-3 rounded-xl transition-all cursor-pointer"
