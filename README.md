@@ -95,10 +95,10 @@ GITHUB_CLIENT_SECRET=your-github-client-secret
 NEXT_PUBLIC_APP_URL=http://localhost:3000
 
 # Project also supports this legacy key
-MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/bazar-dor
+BETTER_AUTH_MONGO_URI=mongodb+srv://username:password@cluster.mongodb.net/bazar-dor
 ```
 
-> Note: `BETTER_AUTH_MONGO_URI` is the preferred key for Better Auth, but this project also accepts `MONGODB_URI` as a fallback.
+> Note: `BETTER_AUTH_MONGO_URI` is the preferred key for Better Auth, but this project also accepts `BETTER_AUTH_MONGO_URI` as a fallback.
 
 ### 3 Run the app
 

@@ -12,10 +12,10 @@ try {
 }
 
 let client;
-const mongoUri = process.env.BETTER_AUTH_MONGO_URI || process.env.MONGODB_URI;
+const mongoUri = process.env.BETTER_AUTH_MONGO_URI || process.env.BETTER_AUTH_MONGO_URI;
 
 if (!mongoUri) {
-  throw new Error("Missing MongoDB connection string. Set BETTER_AUTH_MONGO_URI or MONGODB_URI in your environment.");
+  throw new Error("Missing MongoDB connection string. Set BETTER_AUTH_MONGO_URI or BETTER_AUTH_MONGO_URI in your environment.");
 }
 
 if (process.env.NODE_ENV === "development") {
